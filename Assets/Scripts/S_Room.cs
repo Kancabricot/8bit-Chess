@@ -1,22 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class S_Room : MonoBehaviour
 {
-    [SerializeField] private GameObject[] arrayOfEnnemy;
 
-    public void SpawnEnnemys(Vector2 pos)
-    {
-        int rand = Random.Range(0, arrayOfEnnemy.Length);
+    [SerializeField] private GameObject[] arrayOfSpawner;
 
-        GameObject room = Instantiate(arrayOfEnnemy[rand], pos, Quaternion.identity);
-    }
-
-    
-    void Update()
+    public void SpawnSpawner(Vector2 pos)
     {
         
+        GameObject currentSpawner = arrayOfSpawner[Random.Range(0, arrayOfSpawner.Length)];
+        Instantiate(currentSpawner, pos, transform.rotation);
+        FindObjectOfType<S_Spawner>().SpawnEnnemy();
+        Debug.Log("spawn current spawner");
     }
 }

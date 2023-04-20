@@ -985,6 +985,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrayOfEnnemy:
   - {fileID: 5502728953108187856, guid: 3b193ad22a996b040af7e1d5556e508e, type: 3}
+  arrayOfSpawner:
+  - {fileID: 5059785762814357100, guid: f7a8d91363d59384889003b8a7192a40, type: 3}
+  - {fileID: 5059785762814357100, guid: ad3985ff7fa68a245b3e5d501445df2a, type: 3}
+  spawnrandmax: 1
 --- !u!1 &9064797928846244559
 GameObject:
   m_ObjectHideFlags: 0

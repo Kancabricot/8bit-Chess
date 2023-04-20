@@ -1,7 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class S_DungeonGen : MonoBehaviour
@@ -84,7 +81,7 @@ public class S_DungeonGen : MonoBehaviour
                 string nameNewRoom = roomsgenerate[i].name;
                
                 FindObjectOfType<S_PlayerScript>().TPRoom(roomsgenerate[i].transform.position);
-                FindObjectOfType<S_Room>().SpawnEnnemys(roomsgenerate[i].transform.position);
+                FindObjectOfType<S_Room>().SpawnSpawner(roomsgenerate[i].transform.position);
                 //roomsgenerate[i].gam
 
                 break;
