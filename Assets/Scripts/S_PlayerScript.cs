@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class S_PlayerScript : MonoBehaviour
 {
+    [SerializeField] private Camera m_Camera;
+
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private Rigidbody2D rb;
 
@@ -12,7 +11,7 @@ public class S_PlayerScript : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Start");
+         
     }
 
     private void Update()
@@ -30,7 +29,7 @@ public class S_PlayerScript : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        MoveDirection = new Vector2 (moveX, moveY).normalized; 
+        MoveDirection = new Vector2(moveX, moveY).normalized;
     }
 
     private void Move()
@@ -38,8 +37,9 @@ public class S_PlayerScript : MonoBehaviour
         rb.velocity = new Vector2(MoveDirection.x * moveSpeed, MoveDirection.y * moveSpeed);
     }
 
-    public void TPRoom()
+    public void TPRoom(Vector2 pos)
     {
-        
+        transform.position = pos;
+        m_Camera.transform.position = new Vector3(pos.x, pos.y, -10);
     }
 }
