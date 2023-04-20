@@ -38,8 +38,8 @@ public class S_PlayerScript : MonoBehaviour
         rb.velocity = new Vector2(MoveDirection.x * moveSpeed, MoveDirection.y * moveSpeed);
     }
 
-    public void OnBeforeTransformParentChanged()
+    public void TPRoom()
     {
-        rb.transform.parent = transform;
+        
     }
 }
